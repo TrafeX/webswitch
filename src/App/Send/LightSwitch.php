@@ -7,6 +7,7 @@ class LightSwitch
 {
     const SEND_COMMAND = '/home/pi/433raspberry/433-send';
     const SYSTEMCODE = 13;
+    private $mapState = array('on' => '-t', 'off' => '--off');
 
     public function turnOn($id)
     {
@@ -21,11 +22,11 @@ class LightSwitch
     public function execute($id, $state)
     {
         $cmd = sprintf(
-            '%s -p elro -u %u -i %u --%s',
+            '%s -p elro -u %u -i %u %s',
             self::SEND_COMMAND,
             self::SYSTEMCODE,
             $id,
-            $state
+            $this->mapState[$state]
         );
         $process = new Process($cmd);
         $process->run();
