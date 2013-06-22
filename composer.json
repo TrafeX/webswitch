@@ -6,7 +6,6 @@
     },
     "require": {
         "silex/silex": "1.0.*@dev",
-        "symfony/console": "*",
         "symfony/process": "*"
     }
 }

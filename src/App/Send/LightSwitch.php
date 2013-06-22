@@ -7,6 +7,7 @@ class LightSwitch
 {
     const SEND_COMMAND = '/home/pi/433raspberry/433-send';
     const SYSTEMCODE = 13;
+
     private $mapState = array('on' => '-t', 'off' => '--off');
 
     public function turnOn($id)
